@@ -26,17 +26,15 @@ function greet($greetingStr, $config) {
 
     # 画面表示待ち
     waitForElement 'msg_input' 20
-    Start-Sleep -s 5
+    Start-Sleep -s 3
 
     # Slackのコメントはinputタグではないため直接DOMをいじる
     $driver.executeScript("var elm =document.querySelector('#msg_input .ql-editor'); elm.innerHTML = '<p>$greetingStr</p>';")
 }
 
 
-
+# 指定した要素が画面に表示されるまで待つ
 function waitForElement($locator, $timeInSeconds,[switch]$byClass,[switch]$byName){
-    #this requires the WebDriver.Support.dll in addition to the WebDriver.dll
-    Add-Type -Path C:\WebDriver.Support.dll
     $webDriverWait = New-Object OpenQA.Selenium.Support.UI.WebDriverWait($script:driver, $timeInSeconds)
     try{
         if($byClass){
