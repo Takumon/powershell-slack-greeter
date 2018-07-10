@@ -15,7 +15,6 @@ PowerShellで`greet.ps1`を実行してください。
 実行時引数として挨拶の文言を指定できます。未指定の場合は「こんにちは！」です。
 
 ```
-$ git clone https://github.com/Takumon/powershell-slack-greeter.git
 $ cd powershell-slack-greeter
 $ .\greet.ps1 おはようございます！
 ```
