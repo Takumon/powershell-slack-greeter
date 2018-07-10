@@ -21,21 +21,6 @@ $ .\greet.ps1 おはようございます！
 |slackEmail|Slack登録アカウントのEmail|
 |slackPassword|Slack登録アカウントのパスワード|
 
-## 環境設定
-* ChromeのWebDriverダウンロード
-    * [公式サイト](https://docs.seleniumhq.org/download/)からChromeのWebDriverをダウンロード
-    * `C:selenium`というフォルダを作成し`chromedriver.exe`を格納
-* Seleniumダウンロード
-    * [公式サイト](https://docs.seleniumhq.org/download/)からC#のクライアントをダウンロード
-    * ZIPを解答して、さらに下記ファイルの拡張子を`nupkg`から`zip`に修正し解凍
-        * Selenium.WebDriver.3.13.0.nupkg
-        * Selenium.Support.3.13.0.nupkg
-    * `C:\selenium\driver\lib\net40`というフォルダを作成し`Selenium.Support.3.13.0`の`lib\net40\WebDriver.dll`を格納
-    * `Selenium.WebDriver.3.13.0`の`lib\net40\WebDriver.Support.dll`を`C:`に格納
-* セキュリティブロックの解除 ※ `chromedriver.exe`,`WebDriver.dll`,`WebDriver.Support.dll`の３ファイルに対して実施
-    * 対象ファイルを右クリック > プロパティ　を選択
-    * プロパティの全般タブの下にセキュリティ　ブロック解除のチェックボックスをオンにする 
-
 ## ショートカットの作成
 ショートカットで起動する場合は下記のようにする。  
 ```

@@ -1,6 +1,7 @@
-
-Add-Type -Path "C:\selenium\driver\lib\net40\WebDriver.dll"
-$driver = New-Object OpenQA.Selenium.Chrome.ChromeDriver("C:\selenium")
+$CWD = Split-Path $MyInvocation.MyCommand.Path -parent
+[System.Reflection.Assembly]::LoadFrom("$CWD\WebDriver.dll")
+[System.Reflection.Assembly]::LoadFrom("$CWD\WebDriver.Support.dll")
+$driver = New-Object OpenQA.Selenium.Chrome.ChromeDriver
 
 # Slackにて挨拶する
 # ただし最終的な挨拶の送信は人にやってもらう
