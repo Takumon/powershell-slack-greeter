@@ -19,8 +19,17 @@ $ cd powershell-slack-greeter
 $ .\greet.ps1 おはようございます！
 ```
 
+## ショートカット
+あらかじめ下記ショートカットを用意しています。  
+
+|ショートカット名|挨拶|目的|
+|--|--|--|
+|hello|しゅっしゃ|会社に出社したことを伝える|
+|lunch|おひる|今からお昼ご飯に行くことを伝える|
+|bey|かえる|退社することを伝える|
+
 ## ショートカットの作成
-ショートカットで起動する場合は下記のようにする。  
+独自で作成可能です。下記のようにリンク先を指定してください。
 ```
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy RemoteSigned -File  greet.ps1のパス 挨拶の言葉
 ```

@@ -4,7 +4,6 @@ $CWD = Split-Path $MyInvocation.MyCommand.Path -parent
 $driver = New-Object OpenQA.Selenium.Chrome.ChromeDriver
 
 # Slackにて挨拶する
-# ただし最終的な挨拶の送信は人にやってもらう
 function greet($greetingStr, $config) {
     
     # 自分の独り言チャンネルのURLにアクセス
@@ -30,6 +29,13 @@ function greet($greetingStr, $config) {
 
     # Slackのコメントはinputタグではないため直接DOMをいじる
     $driver.executeScript("var elm =document.querySelector('#msg_input .ql-editor'); elm.innerHTML = '<p>$greetingStr</p>';")
+
+    # コメント
+    $commentBtn = $driver.FindElementById("msg_input_send")
+    $commentBtn.Click()
+
+    # ブラウザ閉じる
+    $driver.close()
 }
 
 
